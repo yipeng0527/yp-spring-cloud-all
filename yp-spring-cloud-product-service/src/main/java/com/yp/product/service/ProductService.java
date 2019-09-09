@@ -1,4 +1,4 @@
-package com.yp.service;
+package com.yp.product.service;
 
 import com.yp.vo.Product;
 

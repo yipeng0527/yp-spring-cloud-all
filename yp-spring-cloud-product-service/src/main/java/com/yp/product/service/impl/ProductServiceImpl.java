@@ -1,6 +1,6 @@
-package com.yp.service.impl;
+package com.yp.product.service.impl;
 
-import com.yp.service.ProductService;
+import com.yp.product.service.ProductService;
 import com.yp.vo.Product;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
