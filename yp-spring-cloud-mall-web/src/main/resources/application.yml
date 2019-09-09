@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: yp-spring-cloud-mall-web
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8260/eureka

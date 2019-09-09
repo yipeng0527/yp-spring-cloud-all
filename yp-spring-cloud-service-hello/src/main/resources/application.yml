@@ -1,0 +1,9 @@
+server:
+  port: 2100
+spring:
+  application:
+    name: yp-spring-cloud-service-hello
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8260/eureka

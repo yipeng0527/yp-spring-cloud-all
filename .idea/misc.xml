@@ -12,6 +12,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/yp-spring-cloud-parent/pom.xml" />
         <option value="$PROJECT_DIR$/yp-spring-cloud-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/yp-spring-cloud-service-hello/pom.xml" />
+        <option value="$PROJECT_DIR$/yp-spring-cloud-consumer-hello/pom.xml" />
+        <option value="$PROJECT_DIR$/yp-spring-cloud-product-service/pom.xml" />
+        <option value="$PROJECT_DIR$/yp-spring-cloud-mall-web/pom.xml" />
+        <option value="$PROJECT_DIR$/yp-spring-cloud-common-bean/pom.xml" />
       </list>
     </option>
   </component>
