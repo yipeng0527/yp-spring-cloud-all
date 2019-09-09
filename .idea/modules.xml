@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/yp-spring-cloud-all.iml" filepath="$PROJECT_DIR$/yp-spring-cloud-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yp-spring-cloud-parent/yp-spring-cloud-parent.iml" filepath="$PROJECT_DIR$/yp-spring-cloud-parent/yp-spring-cloud-parent.iml" />
+    </modules>
+  </component>
+</project>
