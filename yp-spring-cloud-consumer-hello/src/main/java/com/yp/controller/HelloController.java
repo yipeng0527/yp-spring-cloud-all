@@ -35,12 +35,12 @@ public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return restTemplate.getForEntity("http://service-hello/hello", String.class).getBody();
+        return restTemplate.getForEntity("http://yp-spring-cloud-service-hello/hello", String.class).getBody();
     }
 
     @RequestMapping(value = "helloEx", method = RequestMethod.GET)
     public String helloEx() {
-        ServiceInstance instance = this.loadBalancerClient.choose("service-hello");
+        ServiceInstance instance = this.loadBalancerClient.choose("yp-spring-cloud-service-hello");
         URI helloUri = URI.create(String.format("http://%s:%s/hello", instance.getHost(), instance.getPort()));
         logger.info("Target service uri = {}. ", helloUri.toString());
         return new RestTemplate().getForEntity(helloUri, String.class).getBody();
@@ -48,7 +48,7 @@ public class HelloController {
 
     @RequestMapping(value = "helloExLbc")
     public String helloExLbc() {
-        ServiceInstance instance = this.loadBalancerClient.choose("service-hello");
+        ServiceInstance instance = this.loadBalancerClient.choose("yp-spring-cloud-service-hello");
         URI helloUri = URI.create(String.format("http://%s:%s/hello", instance.getHost(), instance.getPort()));
         logger.info("Target service uri={}.", helloUri.toString());
         return lbcRestTemplate.getForEntity(helloUri, String.class).getBody();
