@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/yp-spring-cloud-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yp-spring-cloud-registry" charset="UTF-8" />
   </component>
 </project>
