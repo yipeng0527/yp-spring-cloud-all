@@ -1,9 +1,11 @@
 package com.yp.controller;
 
+import com.yp.service.ProductService;
 import com.yp.vo.Product;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,33 +24,20 @@ public class ProductEndpoint {
 
     private final static Logger log = LoggerFactory.getLogger(ProductEndpoint.class);
 
+    @Autowired
+    private ProductService productService;
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Product> list(){
-        return this.buildProducts();
+    public List<Product> list() {
+        List<Product> productList = this.productService.queryAll();
+        log.info("queryAll result:{}", productList);
+        return productList;
     }
 
-    @RequestMapping(value = "/{itemCode}" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/{itemCode}", method = RequestMethod.GET)
     public Product detail(@PathVariable String itemCode) {
-        List<Product> detailList = this.buildProducts();
-        if (CollectionUtils.isEmpty(detailList)) {
-            return null;
-        }
-        for (Product product : detailList) {
-            if (StringUtils.equals(product.getItemCode(), itemCode)) {
-                return product;
-            }
-        }
-        return null;
-    }
-
-    private List<Product> buildProducts() {
-        List<Product> products = new ArrayList<>();
-        products.add(new Product("item-1", "测试商品-1", "TwoStepsFromJava", 100));
-        products.add(new Product("item-2", "测试商品-2", "TwoStepsFromJava", 200));
-        products.add(new Product("item-3", "测试商品-3", "TwoStepsFromJava", 300));
-        products.add(new Product("item-4", "测试商品-4", "TwoStepsFromJava", 400));
-        products.add(new Product("item-5", "测试商品-5", "TwoStepsFromJava", 500));
-        products.add(new Product("item-6", "测试商品-6", "TwoStepsFromJava", 600));
-        return products;
+        log.info("detail itemCode:{}", itemCode);
+        Product product = this.productService.getProductDetail(itemCode);
+        return product;
     }
 }
