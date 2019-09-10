@@ -3,7 +3,7 @@ CREATE TABLE product(
   item_code varchar(50) COLLATE "default" NOT NULL,
   name varchar(100) COLLATE "default",
   band_name varchar(100) COLLATE "default",
-  price numeric,
+  price numeric(18,2),
   created_by varchar(100) not null default USER,
 	created_date timestamp(0) not null DEFAULT now(),
 	updated_by varchar(100) not null default USER,

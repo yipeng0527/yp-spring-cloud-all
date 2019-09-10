@@ -1,7 +1,6 @@
 package com.yp.product.dao;
 
-import com.yp.vo.Product;
-import org.springframework.stereotype.Repository;
+import com.yp.common.bean.product.vo.Product;
 
 import java.util.List;
 
@@ -19,4 +18,11 @@ public interface ProductDao {
      * @return
      */
     Product getProductDetail(String itemCode);
+
+    /**
+     * 新增产品
+     * @param product
+     * @return
+     */
+    Integer insertProduct(Product product);
 }

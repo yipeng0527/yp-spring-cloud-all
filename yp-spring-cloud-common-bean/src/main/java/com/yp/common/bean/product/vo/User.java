@@ -1,4 +1,4 @@
-package com.yp.vo;
+package com.yp.common.bean.product.vo;
 
 import com.google.gson.Gson;
 

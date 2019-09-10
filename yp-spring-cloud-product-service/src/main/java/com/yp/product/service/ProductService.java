@@ -1,6 +1,7 @@
 package com.yp.product.service;
 
-import com.yp.vo.Product;
+import com.yp.common.bean.common.vo.BusinessResponse;
+import com.yp.common.bean.product.vo.Product;
 
 import java.util.List;
 
@@ -21,4 +22,11 @@ public interface ProductService {
      * @return
      */
     Product getProductDetail(String itemCode);
+
+    /**
+     * 新增产品类型
+     * @param product
+     * @return
+     */
+    BusinessResponse saveProduct(Product product);
 }

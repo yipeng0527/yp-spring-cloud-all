@@ -1,14 +1,12 @@
 package com.yp.product.controller;
 
+import com.yp.common.bean.common.vo.BusinessResponse;
+import com.yp.common.bean.product.vo.Product;
 import com.yp.product.service.ProductService;
-import com.yp.vo.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,5 +34,11 @@ public class ProductEndpoint {
         log.info("detail itemCode:{}", itemCode);
         Product product = this.productService.getProductDetail(itemCode);
         return product;
+    }
+
+    @RequestMapping(value = "/saveProduct" ,method = RequestMethod.POST)
+    public BusinessResponse saveProduct(@RequestBody Product product){
+        log.info("saveProduct param:{}",product);
+        return this.productService.saveProduct(product);
     }
 }

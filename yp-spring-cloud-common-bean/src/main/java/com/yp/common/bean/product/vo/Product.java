@@ -1,8 +1,9 @@
-package com.yp.vo;
+package com.yp.common.bean.product.vo;
 
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @author ex-yipeng
@@ -28,13 +29,13 @@ public class Product implements Serializable {
     /**
      * 产品价格
      */
-    private int price;
+    private BigDecimal price;
 
     public Product(){
 
     }
 
-    public Product(String itemCode, String name, String bandName, int price) {
+    public Product(String itemCode, String name, String bandName, BigDecimal price) {
         this.itemCode = itemCode;
         this.name = name;
         this.bandName = bandName;
@@ -65,11 +66,11 @@ public class Product implements Serializable {
         this.bandName = bandName;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 

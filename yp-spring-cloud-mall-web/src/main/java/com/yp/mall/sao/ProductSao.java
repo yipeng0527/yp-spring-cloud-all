@@ -1,6 +1,6 @@
-package com.yp.service;
+package com.yp.mall.sao;
 
-import com.yp.vo.Product;
+import com.yp.common.bean.product.vo.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-
 /**
- * Created by PP on 2019/9/8.
+ * @author ex-yipeng
+ * @version Id: ProductSao.java, v 0.1 2019/9/10 13:52 ex-yipeng Exp $
  */
 @FeignClient("yp-spring-cloud-product-service")
-public interface ProductService {
+public interface ProductSao {
 
     @RequestMapping(value = "/product", method = RequestMethod.GET)
     List<Product> findAll();

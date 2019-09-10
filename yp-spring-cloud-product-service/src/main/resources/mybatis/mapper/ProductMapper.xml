@@ -4,7 +4,7 @@
 <!-- namespace：必须与对应的接口全类名一致 id:必须与对应接口的某个对应的方法名一致 -->
 
 <mapper namespace="com.yp.product.dao.ProductDao">
-    <select id="queryAll" resultType="com.yp.vo.Product">
+    <select id="queryAll" resultType="com.yp.common.bean.product.vo.Product">
         select
             work_day as itemCode,
             created_by as name,
@@ -12,7 +12,7 @@
         from pos_workday
     </select>
 
-    <select id="getProductDetail" parameterType="string" resultType="com.yp.vo.Product">
+    <select id="getProductDetail" parameterType="string" resultType="com.yp.common.bean.product.vo.Product">
          select
             work_day as itemCode,
             created_by as name,
@@ -20,5 +20,21 @@
         from pos_workday
         where work_day = #{itemCode}
     </select>
+
+    <insert id="insertProduct" parameterType="com.yp.common.bean.product.vo.Product">
+        insert into pos_workday(
+          work_day,
+          created_by,
+          created_date,
+          updated_by,
+          updated_date
+        )VALUES (
+          #{itemCode},
+          user,
+          now(),
+          user,
+          now()
+        )
+    </insert>
 </mapper>
 
