@@ -3,7 +3,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace：必须与对应的接口全类名一致 id:必须与对应接口的某个对应的方法名一致 -->
 
-<mapper namespace="com.yp">
+<mapper namespace="com.yp.product.dao.ProductDao">
+    <select id="queryAll" resultType="com.yp.vo.Product">
+        select
+            work_day as itemCode,
+            created_by as name,
+            created_date as bandName
+        from pos_workday
+    </select>
 
+    <select id="getProductDetail" parameterType="string" resultType="com.yp.vo.Product">
+         select
+            work_day as itemCode,
+            created_by as name,
+            created_date as bandName
+        from pos_workday
+        where work_day = #{itemCode}
+    </select>
 </mapper>
 
