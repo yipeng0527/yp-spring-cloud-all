@@ -6,34 +6,42 @@
 <mapper namespace="com.yp.product.dao.ProductDao">
     <select id="queryAll" resultType="com.yp.common.bean.product.vo.Product">
         select
-            work_day as itemCode,
-            created_by as name,
-            created_date as bandName
-        from pos_workday
+        item_code as itemCode,
+        name as name,
+        band_name as bandName,
+        price as price
+        from product
     </select>
 
     <select id="getProductDetail" parameterType="string" resultType="com.yp.common.bean.product.vo.Product">
-         select
-            work_day as itemCode,
-            created_by as name,
-            created_date as bandName
-        from pos_workday
-        where work_day = #{itemCode}
+        select
+        item_code as itemCode,
+        name as name,
+        band_name as bandName,
+        price as price
+        from product
+        where item_code = #{itemCode}
     </select>
 
     <insert id="insertProduct" parameterType="com.yp.common.bean.product.vo.Product">
-        insert into pos_workday(
-          work_day,
-          created_by,
-          created_date,
-          updated_by,
-          updated_date
+        insert into product(
+        item_code,
+        name,
+        band_name,
+        price,
+        created_by,
+        created_date,
+        updated_by,
+        updated_date
         )VALUES (
-          #{itemCode},
-          user,
-          now(),
-          user,
-          now()
+        #{itemCode},
+        #{name},
+        #{bandName},
+        #{price},
+        user,
+        now(),
+        user,
+        now()
         )
     </insert>
 </mapper>

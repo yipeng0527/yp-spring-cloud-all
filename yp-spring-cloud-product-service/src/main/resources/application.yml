@@ -17,9 +17,12 @@ spring:
       web-stat-filter.enabled: true
       driver-class-name: org.postgresql.Driver
       #基本属性
-      url: jdbc:postgresql://10.32.0.175:5432/ht_service4?binaryTransfer=false
-      username: posopr
-      password: ht123456
+      #url: jdbc:postgresql://10.32.0.175:5432/ht_service4?binaryTransfer=false
+      #username: posopr
+      #password: ht123456
+      url: jdbc:postgresql://127.0.0.1:5432/yp_spring_cloud?binaryTransfer=false
+      username: postgres
+      password: root
       #配置初始化大小/最小/最大
       initial-size: 1
       min-idle: 1
