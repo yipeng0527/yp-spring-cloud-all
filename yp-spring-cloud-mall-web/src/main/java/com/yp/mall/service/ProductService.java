@@ -1,5 +1,6 @@
 package com.yp.mall.service;
 
+import com.yp.common.bean.common.vo.BusinessResponse;
 import com.yp.common.bean.product.vo.Product;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface ProductService {
     List<Product> findAll();
 
     Product loadByItemCode(String itemCode);
+
+    BusinessResponse saveProduct(Product product);
 }

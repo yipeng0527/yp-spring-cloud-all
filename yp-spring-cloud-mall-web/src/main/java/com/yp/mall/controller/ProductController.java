@@ -1,12 +1,12 @@
 package com.yp.mall.controller;
 
+import com.yp.common.bean.common.vo.BusinessResponse;
 import com.yp.common.bean.product.vo.Product;
 import com.yp.mall.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,6 +16,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/product")
 public class ProductController {
+
+    private final static Logger log = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductService productService;
@@ -28,5 +30,11 @@ public class ProductController {
     @RequestMapping(value = "/{itemCode}", method = RequestMethod.GET)
     public Product detail(@PathVariable String itemCode) {
         return this.productService.loadByItemCode(itemCode);
+    }
+
+    @RequestMapping(value = "/saveProduct" ,method = RequestMethod.POST)
+    public BusinessResponse saveProduct(@RequestBody Product product){
+        log.info("saveProduct param:{}",product);
+        return this.productService.saveProduct(product);
     }
 }

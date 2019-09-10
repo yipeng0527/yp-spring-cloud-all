@@ -1,5 +1,6 @@
 package com.yp.mall.service.impl;
 
+import com.yp.common.bean.common.vo.BusinessResponse;
 import com.yp.common.bean.product.vo.Product;
 import com.yp.mall.sao.ProductSao;
 import com.yp.mall.service.ProductService;
@@ -26,5 +27,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product loadByItemCode(String itemCode) {
         return productSao.loadByItemCode(itemCode);
+    }
+
+    @Override
+    public BusinessResponse saveProduct(Product product) {
+        return productSao.saveProduct(product);
     }
 }
