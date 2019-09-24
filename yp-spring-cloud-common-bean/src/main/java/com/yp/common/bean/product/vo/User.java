@@ -16,14 +16,17 @@ public class User implements Serializable {
 
     private String contact;
 
+    private String desc;
+
     public User(){
 
     }
 
-    public User(String userName, String passWord, String contact) {
+    public User(String userName, String passWord, String contact, String desc) {
         this.userName = userName;
         this.passWord = passWord;
         this.contact = contact;
+        this.desc = desc;
     }
 
     public String getUserName() {
@@ -48,6 +51,14 @@ public class User implements Serializable {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     @Override

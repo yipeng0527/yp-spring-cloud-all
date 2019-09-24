@@ -22,6 +22,8 @@
 		<module>yp-spring-cloud-product-service</module>
 		<module>yp-spring-cloud-mall-web</module>
 		<module>yp-spring-cloud-common-bean</module>
+		<module>yp-spring-cloud-zuul</module>
+		<module>yp-spring-cloud-user-service</module>
 	</modules>
 
 </project>

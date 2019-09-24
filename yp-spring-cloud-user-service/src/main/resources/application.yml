@@ -1,0 +1,10 @@
+
+server:
+  port: 3200
+spring:
+  application:
+    name: yp-spring-cloud-user-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8260/eureka

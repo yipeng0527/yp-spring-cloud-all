@@ -12,7 +12,7 @@ import java.util.List;
  * @author ex-yipeng
  * @version Id: ProductSao.java, v 0.1 2019/9/10 13:52 ex-yipeng Exp $
  */
-@FeignClient("yp-spring-cloud-product-service")
+@FeignClient(name = "yp-spring-cloud-product-service", fallback = ProductSaoFallback.class)
 public interface ProductSao {
 
     @RequestMapping(value = "/product", method = RequestMethod.GET)
